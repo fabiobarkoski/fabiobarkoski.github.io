@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*body{
+    background-color: #24283b;
+}
+
+a:link, a[href$=".html"]{
+    color: #2ac3de;
+}
+
+h1{
+    color: #7aa2f7;
+}
+
+h2, h3 {
+  color: #bb9af7;
+}
+
+p, time {
+  color: #9aa5ce;
+}*/
