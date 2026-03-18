@@ -19,9 +19,9 @@ defmodule Blog.Components do
       <meta property="og:site_name" content="Blogoski" />
       <meta property="og:title" content="Blogoski" />
       <meta property="og:description" content="Yet another blog about software development" />
-      <meta property="og:image" content="https://blogoski.com/assets/img/social-card.png" />
+      <meta property="og:image" content="/assets/img/social-card.png" />
       <meta name="twitter:card" content="summary" />
-      <meta name="twitter:image" content="https://blogoski.com/assets/img/social-card.png" />
+      <meta name="twitter:image" content="/assets/img/social-card.png" />
       <meta name="twitter:title" content="Blogoski" />
       <meta name="twitter:description" content="Yet another blog about software development" />
       <link phx-track-static rel="stylesheet" href={@css_path} />
