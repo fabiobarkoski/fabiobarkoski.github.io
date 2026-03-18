@@ -10,6 +10,20 @@ defmodule Blog.Components do
   def root(assigns) do
     ~H"""
     <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>Blogoski</title>
+      <meta name="description" content="Yet another blog about software development" />
+      <meta name="author" content="Fabio Barkoski" />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="Blogoski" />
+      <meta property="og:title" content="Blogoski" />
+      <meta property="og:description" content="Yet another blog about software development" />
+      <meta property="og:image" content="https://blogoski.com/assets/img/social-card.png" />
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content="https://blogoski.com/assets/img/social-card.png" />
+      <meta name="twitter:title" content="Blogoski" />
+      <meta name="twitter:description" content="Yet another blog about software development" />
       <link phx-track-static rel="stylesheet" href={@css_path} />
       <script defer phx-track-static type="text/javascript" src={@js_path}></script>
     </head>
@@ -48,10 +62,7 @@ defmodule Blog.Components do
         <span class="text-gray-700 dark:text-[#9aa5ce]">
           © 2026
           <a href="https://blogoski.com/" class="underline">blogoski</a>
-          - Made with
-          <a href="https://getpelican.com" target="_blank" class="underline">Elixir</a>
-          and
-          <a href="https://tailwindcss.com/" target="_blank" class="underline">TailwindCSS</a>
+          - Made with Elixir and TailwindCSS
         </span>
       </footer>
     </body>

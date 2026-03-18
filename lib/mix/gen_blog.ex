@@ -21,10 +21,10 @@ defmodule Mix.Tasks.Gen.Blog do
 
   @impl Mix.Task
   def run(_args) do
-    File.mkdir_p!("output/assets/css")
-    File.mkdir_p!("output/assets/js")
-    File.copy!("priv/static/assets/css/app.css", "output/assets/css/app.css")
-    File.copy!("priv/static/assets/js/app.js", "output/assets/js/app.js")
+    File.mkdir_p!("docs/assets/css")
+    File.mkdir_p!("docs/assets/js")
+    File.copy!("priv/static/assets/css/app.css", "docs/assets/css/app.css")
+    File.copy!("priv/static/assets/js/app.js", "docs/assets/js/app.js")
     homepage()
     tags()
     posts()
@@ -65,7 +65,7 @@ defmodule Mix.Tasks.Gen.Blog do
 
     base(assigns)
     |> MDEx.to_html!()
-    |> save_content("output/index.html")
+    |> save_content("docs/index.html")
   end
 
   defp tags do
@@ -93,7 +93,7 @@ defmodule Mix.Tasks.Gen.Blog do
 
     base(assigns)
     |> MDEx.to_html!()
-    |> save_content("output/tags/elixir.html")
+    |> save_content("docs/tags/elixir.html")
   end
 
   defp posts do
@@ -112,7 +112,7 @@ defmodule Mix.Tasks.Gen.Blog do
 
     base(assigns)
     |> MDEx.to_html!()
-    |> save_content("output/posts/my-super-post.html")
+    |> save_content("docs/posts/my-super-post.html")
   end
 
   def base(assigns) do
