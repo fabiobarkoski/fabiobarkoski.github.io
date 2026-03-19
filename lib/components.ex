@@ -86,13 +86,13 @@ defmodule Blog.Components do
             </a>
           </div>
           <div class="group relative hover:bg-gray-400/50 dark:hover:bg-[#565f89]/50 rounded-md px-4 py-4 dark:text-[#9aa5ce] w-full min-h-28">
-            <h3 class="mt-3 text-lg font-semibold leading-6 text-900 group-hover:text-gray-900/50 dark:text-[#bb9af7] dark:group-hover:text-[#a9b1d6]/50">
+            <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-900/50 dark:text-[#bb9af7] dark:group-hover:text-[#a9b1d6]/50">
               <a href={"posts/#{post.href}.html"}>
                 <span class="absolute inset-0"></span>
                 {post.title}
               </a>
             </h3>
-            <p class="mt-5 line-clamp-3 text-sm leading-6">{post.desc}</p>
+            <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-700 dark:text-[#9aa5ce]">{post.desc}</p>
           </div>
         </article>
       </div>
