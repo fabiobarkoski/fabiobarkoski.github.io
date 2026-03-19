@@ -8,9 +8,9 @@
   <meta property="og:site_name" content="Blogoski">
   <meta property="og:title" content="Blogoski">
   <meta property="og:description" content="Yet another blog about software development">
-  <meta property="og:image" content="https://blogoski.com/assets/img/social-card.png">
+  <meta property="og:image" content="/assets/img/social-card.png">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:image" content="https://blogoski.com/assets/img/social-card.png">
+  <meta name="twitter:image" content="/assets/img/social-card.png">
   <meta name="twitter:title" content="Blogoski">
   <meta name="twitter:description" content="Yet another blog about software development">
   <link phx-track-static rel="stylesheet" href="../assets/css/app.css">
@@ -18,10 +18,10 @@
 </head>
 <body class="bg-[#e2e8f0] dark:bg-[#24283b] min-h-screen">
   <header>
-    <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
-      <div class="flex lg:flex-1">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8" aria-label="Global">
+      <div class="flex flex-1 items-center gap-2">
         <a href="https://blogoski.com/">
-          <h1 class="text-2xl font-bold -m-1.5 p-1.5 text-gray-900 hover:text-gray-900/50 dark:text-[#7aa2f7] dark:hover:text-[#7aa2f7]/50">
+          <h1 class="text-xl sm:text-2xl font-bold -m-1.5 p-1.5 text-gray-900 hover:text-gray-900/50 dark:text-[#7aa2f7] dark:hover:text-[#7aa2f7]/50">
             Yet another blog
           </h1>
         </a>
@@ -34,26 +34,26 @@
           </svg>
         </button>
       </div>
-      <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+      <div class="flex items-center justify-end">
         <a href="https://github.com/fabiobarkoski" target="_blank" class="-m-1.5 p-1.5">
           <span class="sr-only">Socials</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="hover:scale-110 dark:text-gray-300" viewBox="0 0 16 16">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="hover:scale-110 dark:text-gray-300 sm:w-8 sm:h-8" viewBox="0 0 16 16">
             <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
           </svg>
         </a>
       </div>
     </nav>
   </header>
-  <main class="grid min-h-5/6 place-items-center px-6 py-24 sm:py-32 lg:px-8">
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
-  <div class="mx-auto max-w-2xl text-center dark:text-[#9aa5ce]">
-    <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-gray-900 dark:text-[#bb9af7]">foi</h2>
-    <p class="mt-2 text-lg leading-8 text-gray-700 dark:text-[#9aa5ce]">some desc</p>
+  <main class="grid min-h-5/6 place-items-center px-4 py-12 sm:px-6 sm:py-24 lg:px-8">
+    <div class="w-full mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+  <div class="text-center dark:text-[#9aa5ce]">
+    <h2 class="text-2xl font-bold tracking-tight sm:text-4xl text-gray-900 dark:text-[#bb9af7]">foi</h2>
+    <p class="mt-2 text-base sm:text-lg leading-8 text-gray-700 dark:text-[#9aa5ce]">some desc</p>
   </div>
   <div class="mt-6 text-gray-600 dark:text-[#2ac3de]">
     <a href="javascript:history.back()">cd ..</a>
   </div>
-  <div class="mt-4 text-justify leading-7 text-gray-700 dark:text-[#9aa5ce]">
+  <div class="mt-4 text-justify leading-7 text-gray-700 dark:text-[#9aa5ce] overflow-x-auto">
     <h1>jop</h1>
 <p class="text-red-500">london, altaria</p>
 <h2>codigo</h2>
@@ -81,9 +81,9 @@ Nunc molestie interdum posuere. Praesent volutpat lectus felis, id consequat sap
 Ut auctor dapibus porttitor. Quisque eu ultrices enim. Donec in orci quis turpis pharetra varius.
 Praesent a faucibus nibh, quis congue tellus. Nam dapibus enim id felis finibus posuere.</p>
   </div>
-</div>  
+</div>
   </main>
-  <footer class="flex justify-center pb-4">
+  <footer class="flex justify-center pb-4 px-4 text-center">
     <span class="text-gray-700 dark:text-[#9aa5ce]">
       © 2026
       <a href="https://blogoski.com/" class="underline">blogoski</a>

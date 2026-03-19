@@ -29,10 +29,10 @@ defmodule Blog.Components do
     </head>
     <body class="bg-[#e2e8f0] dark:bg-[#24283b] min-h-screen">
       <header>
-        <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
-          <div class="flex lg:flex-1">
+        <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8" aria-label="Global">
+          <div class="flex flex-1 items-center gap-2">
             <a href="https://blogoski.com/">
-              <h1 class="text-2xl font-bold -m-1.5 p-1.5 text-gray-900 hover:text-gray-900/50 dark:text-[#7aa2f7] dark:hover:text-[#7aa2f7]/50">
+              <h1 class="text-xl sm:text-2xl font-bold -m-1.5 p-1.5 text-gray-900 hover:text-gray-900/50 dark:text-[#7aa2f7] dark:hover:text-[#7aa2f7]/50">
                 Yet another blog
               </h1>
             </a>
@@ -45,20 +45,20 @@ defmodule Blog.Components do
               </svg>
             </button>
           </div>
-          <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+          <div class="flex items-center justify-end">
             <a href="https://github.com/fabiobarkoski" target="_blank" class="-m-1.5 p-1.5">
               <span class="sr-only">Socials</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="hover:scale-110 dark:text-gray-300" viewBox="0 0 16 16">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="hover:scale-110 dark:text-gray-300 sm:w-8 sm:h-8" viewBox="0 0 16 16">
                 <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
               </svg>
             </a>
           </div>
         </nav>
       </header>
-      <main class="grid min-h-5/6 place-items-center px-6 py-24 sm:py-32 lg:px-8">
-        {@content}  
+      <main class="grid min-h-5/6 place-items-center px-4 py-12 sm:px-6 sm:py-24 lg:px-8">
+        {@content}
       </main>
-      <footer class="flex justify-center pb-4">
+      <footer class="flex justify-center pb-4 px-4 text-center">
         <span class="text-gray-700 dark:text-[#9aa5ce]">
           © 2026
           <a href="https://blogoski.com/" class="underline">blogoski</a>
@@ -71,28 +71,28 @@ defmodule Blog.Components do
 
   def homepage(assigns) do
     ~H"""
-      <div class="text-center">
+      <div class="text-center w-full max-w-2xl">
         <h1 class="mt-4 text-3xl font-bold tracking-tight sm:text-5xl text-gray-900 dark:text-[#7aa2f7]">
           {@blog_title}
         </h1>
         <p class="mt-6 text-base leading-7 text-gray-700 dark:text-[#9aa5ce]">{@blog_desc}</p>
       </div>
-      <div class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-        <article :for={post <- @posts} class="flex max-w-xl flex-col items-start justify-between">
-          <div class="flex items-center gap-x-4 text-xs mb-2">
+      <div class="w-full max-w-5xl mx-auto mt-10 grid grid-cols-1 gap-x-8 gap-y-8 pt-10 sm:mt-16 sm:pt-16 sm:grid-cols-2 lg:grid-cols-3">
+        <article :for={post <- @posts} class="flex flex-col items-start justify-between w-full">
+          <div class="flex items-center gap-x-4 text-xs mb-4">
             <time class="text-gray-700 dark:text-[#9aa5ce]">{post.date}</time>
-            <a :for={tag <- post.tags} href={"tags/#{tag.href}.html"} class="relative z-10 rounded-full bg-gray-50 text-black px3 py-1.5 pr-1 pl-1 font-medium hover:bg-[#c0caf5]">
+            <a :for={tag <- post.tags} href={"tags/#{tag.href}.html"} class="relative z-10 rounded-full bg-gray-50 text-black px-2.5 py-1.5 font-medium hover:bg-[#c0caf5]">
               {tag.name}
             </a>
           </div>
-          <div class="group relative hover:bg-gray-400/50 dark:hover:bg-[#565f89]/50 rounded-md px-4 py-4 dark:text-[#9aa5ce] h-32 w-64">
+          <div class="group relative hover:bg-gray-400/50 dark:hover:bg-[#565f89]/50 rounded-md px-4 py-4 dark:text-[#9aa5ce] w-full min-h-28">
             <h3 class="mt-3 text-lg font-semibold leading-6 text-900 group-hover:text-gray-900/50 dark:text-[#bb9af7] dark:group-hover:text-[#a9b1d6]/50">
               <a href={"posts/#{post.href}.html"}>
                 <span class="absolute inset-0"></span>
                 {post.title}
               </a>
             </h3>
-            <p class="mt-5 line-clamp-3 text-sm leading-6i"><p>{post.desc}</p></p>
+            <p class="mt-5 line-clamp-3 text-sm leading-6">{post.desc}</p>
           </div>
         </article>
       </div>
@@ -101,21 +101,19 @@ defmodule Blog.Components do
 
   def tags(assigns) do
     ~H"""
-      <div class="text-center">
+      <div class="text-center w-full max-w-2xl">
         <h1 class="mt-4 text-3xl font-bold tracking-tight sm:text-5xl text-gray-900 dark:text-[#7aa2f7]">{@tag}</h1>
         <p class="mt-6 text-base leading-7 text-gray-700 dark:text-[#9aa5ce]">{"Articles under #{@tag} tag"}</p>
       </div>
-      <ol :for={post <- @posts} role="list" class="pt-10 divide-y divide-gray-500/50 w-64">
-        <li class="flex justify-center justify-between gap-x-6 py-5 pr-4 pl-4 mb-2 hover:bg-gray-400/50 dark:hover:bg-[#565f89]/50 rounded-b-md">
-            <a href={"posts/#{post.href}.html"}>
-            <div class="flex min-w-0 gap-x-4">
-              <div class="min-w-0 flex-auto dark:text-[#9aa5ce]">
-                <h2 class="text-l font-semibold leading-6 text-center text-gray-900 dark:text-[#bb9af7]">{post.title}</h2>
-                <p class="mt-1 truncate text-xs leading-5 text-gray-700"></p><p>{post.desc}</p><p></p>
-              </div>
+      <ol role="list" class="pt-10 divide-y divide-gray-500/50 w-full max-w-2xl">
+        <li :for={post <- @posts} class="py-5 px-4 mb-2 hover:bg-gray-400/50 dark:hover:bg-[#565f89]/50 rounded-b-md">
+          <a href={"posts/#{post.href}.html"} class="flex justify-between gap-x-4 sm:gap-x-6">
+            <div class="min-w-0 flex-auto dark:text-[#9aa5ce]">
+              <h2 class="text-base font-semibold leading-6 text-gray-900 dark:text-[#bb9af7]">{post.title}</h2>
+              <p class="mt-1 text-xs leading-5 text-gray-700 dark:text-[#9aa5ce]">{post.desc}</p>
             </div>
-            <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-              <p class="mt-1 text-xs leading-5 text-gray-700 dark:text-[#9aa5ce]">{post.date}</p>
+            <div class="shrink-0 flex flex-col items-end">
+              <p class="mt-1 text-xs leading-5 text-gray-700 dark:text-[#9aa5ce] whitespace-nowrap">{post.date}</p>
             </div>
           </a>
         </li>
@@ -125,15 +123,15 @@ defmodule Blog.Components do
 
   def posts(assigns) do
     ~H"""
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <div class="mx-auto max-w-2xl text-center dark:text-[#9aa5ce]">
-        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-gray-900 dark:text-[#bb9af7]">{@title}</h2>
-        <p class="mt-2 text-lg leading-8 text-gray-700 dark:text-[#9aa5ce]">{@desc}</p>
+    <div class="w-full mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center dark:text-[#9aa5ce]">
+        <h2 class="text-2xl font-bold tracking-tight sm:text-4xl text-gray-900 dark:text-[#bb9af7]">{@title}</h2>
+        <p class="mt-2 text-base sm:text-lg leading-8 text-gray-700 dark:text-[#9aa5ce]">{@desc}</p>
       </div>
       <div class="mt-6 text-gray-600 dark:text-[#2ac3de]">
         <a href="javascript:history.back()">cd ..</a>
       </div>
-      <div class="mt-4 text-justify leading-7 text-gray-700 dark:text-[#9aa5ce]">
+      <div class="mt-4 text-justify leading-7 text-gray-700 dark:text-[#9aa5ce] overflow-x-auto">
         {@content}
       </div>
     </div>
