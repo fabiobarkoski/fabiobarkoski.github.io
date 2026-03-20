@@ -25,19 +25,19 @@
             Yet another blog
           </h1>
         </a>
-        <button id="theme-toggle" onclick="changeTheme()" type="button" class="text-gray-500 dark:text-gray-400 rounded-lg text-sm p-1.5">
-          <svg id="theme-toggle-dark-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 hidden">
+        <button id="theme-toggle" onclick="changeTheme()" type="button" aria-label="Toggle theme" class="text-gray-500 dark:text-gray-400 rounded-lg text-sm p-1.5">
+          <svg id="theme-toggle-dark-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="w-5 h-5 hidden">
             <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z" clip-rule="evenodd"></path>
           </svg>
-          <svg id="theme-toggle-light-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 hidden">
+          <svg id="theme-toggle-light-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="w-5 h-5 hidden">
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"></path>
           </svg>
         </button>
       </div>
       <div class="flex items-center justify-end">
-        <a href="https://github.com/fabiobarkoski" target="_blank" class="-m-1.5 p-1.5">
-          <span class="sr-only">Socials</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="hover:scale-110 dark:text-gray-300 sm:w-8 sm:h-8" viewBox="0 0 16 16">
+        <a href="https://github.com/fabiobarkoski" target="_blank" rel="noopener noreferrer" class="-m-1.5 p-1.5">
+          <span class="sr-only">GitHub profile (opens in new tab)</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" aria-hidden="true" class="hover:scale-110 fill-gray-800 dark:fill-gray-300 sm:w-8 sm:h-8" viewBox="0 0 16 16">
             <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
           </svg>
         </a>
@@ -52,9 +52,9 @@
     <p class="mt-6 text-base leading-7 text-gray-700 dark:text-[#9aa5ce]">See some of my posts below</p>
   </div>
   <div class="w-full max-w-5xl mx-auto mt-10 grid grid-cols-1 gap-x-8 gap-y-8 pt-10 sm:mt-16 sm:pt-16 sm:grid-cols-2 lg:grid-cols-3">
-    <article class="flex flex-col items-start justify-between w-full">
+    <article aria-label="foi" class="flex flex-col items-start justify-between w-full">
       <div class="flex items-center gap-x-4 text-xs mb-4">
-        <time class="text-gray-700 dark:text-[#9aa5ce]">Dec 03, 2010</time>
+        <time datetime="Dec 03, 2010" class="text-gray-700 dark:text-[#9aa5ce]">Dec 03, 2010</time>
         <a href="tags/elixir.html" class="relative z-10 rounded-full bg-gray-50 text-black px-2.5 py-1.5 font-medium hover:bg-[#c0caf5]">
           elixir
         </a>
