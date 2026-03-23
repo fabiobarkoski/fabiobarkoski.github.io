@@ -16,6 +16,11 @@
   <meta name="twitter:title" content="Blogoski">
   <meta name="twitter:description" content="Yet another blog about software development">
   <link phx-track-static rel="stylesheet" href="../assets/css/app.css">
+  <script>
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
   <script defer phx-track-static type="text/javascript" src="../assets/js/app.js"></script>
 </head>
 <body class="bg-[#e2e8f0] dark:bg-[#24283b] min-h-screen">
@@ -53,13 +58,13 @@
   </div>
   <ol role="list" class="pt-10 divide-y divide-gray-500/50 w-full max-w-2xl">
     <li class="py-5 px-4 mb-2 hover:bg-gray-400/50 dark:hover:bg-[#565f89]/50 rounded-b-md">
-      <a href="posts/my-super-post.html" class="flex justify-between gap-x-4 sm:gap-x-6">
+      <a href="posts/functional-python.html" class="flex justify-between gap-x-4 sm:gap-x-6">
         <div class="min-w-0 flex-auto dark:text-[#9aa5ce]">
-          <h2 class="text-base font-semibold leading-6 text-gray-900 dark:text-[#bb9af7]">foi</h2>
-          <p class="mt-1 text-xs leading-5 text-gray-700 dark:text-[#9aa5ce]">some desc</p>
+          <h2 class="text-base font-semibold leading-6 text-gray-900 dark:text-[#bb9af7]">Functional programming to improve your python code reliability</h2>
+          <p class="mt-1 text-xs leading-5 text-gray-700 dark:text-[#9aa5ce]">How making your code more functional can improve its reliability</p>
         </div>
         <div class="shrink-0 flex flex-col items-end">
-          <time datetime="Dec 03, 2010" class="mt-1 text-xs leading-5 text-gray-700 dark:text-[#9aa5ce] whitespace-nowrap">Dec 03, 2010</time>
+          <time datetime="Mar 22, 2026" class="mt-1 text-xs leading-5 text-gray-700 dark:text-[#9aa5ce] whitespace-nowrap">Mar 22, 2026</time>
         </div>
       </a>
     </li>

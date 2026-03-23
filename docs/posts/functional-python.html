@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blogoski</title>
+  <meta name="description" content="Yet another blog about software development">
+  <meta name="author" content="Fabio Barkoski">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Blogoski">
+  <meta property="og:title" content="Blogoski">
+  <meta property="og:description" content="Yet another blog about software development">
+  <meta property="og:image" content="/assets/img/social-card.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="/assets/img/social-card.png">
+  <meta name="twitter:title" content="Blogoski">
+  <meta name="twitter:description" content="Yet another blog about software development">
+  <link phx-track-static rel="stylesheet" href="../assets/css/app.css">
+  <script>
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+  <script defer phx-track-static type="text/javascript" src="../assets/js/app.js"></script>
+</head>
+<body class="bg-[#e2e8f0] dark:bg-[#24283b] min-h-screen">
+  <header>
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8" aria-label="Global">
+      <div class="flex flex-1 items-center gap-2">
+        <a href="https://blogoski.com/">
+          <h1 class="text-xl sm:text-2xl font-bold -m-1.5 p-1.5 text-gray-900 hover:text-gray-900/50 dark:text-[#7aa2f7] dark:hover:text-[#7aa2f7]/50">
+            Yet another blog
+          </h1>
+        </a>
+        <button id="theme-toggle" onclick="changeTheme()" type="button" aria-label="Toggle theme" class="text-gray-500 dark:text-gray-400 rounded-lg text-sm p-1.5">
+          <svg id="theme-toggle-dark-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="w-5 h-5 hidden">
+            <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z" clip-rule="evenodd"></path>
+          </svg>
+          <svg id="theme-toggle-light-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="w-5 h-5 hidden">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="flex items-center justify-end">
+        <a href="https://github.com/fabiobarkoski" target="_blank" rel="noopener noreferrer" class="-m-1.5 p-1.5">
+          <span class="sr-only">GitHub profile (opens in new tab)</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" aria-hidden="true" class="hover:scale-110 fill-gray-800 dark:fill-gray-300 sm:w-8 sm:h-8" viewBox="0 0 16 16">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+          </svg>
+        </a>
+      </div>
+    </nav>
+  </header>
+  <main class="grid min-h-5/6 place-items-center px-4 py-12 sm:px-6 sm:py-24 lg:px-8">
+    <div class="w-full mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+  <div class="text-center dark:text-[#9aa5ce]">
+    <h2 class="text-2xl font-bold tracking-tight sm:text-4xl text-gray-900 dark:text-[#bb9af7]">Functional programming to improve your python code reliability</h2>
+    <p class="mt-2 text-base sm:text-lg leading-8 text-gray-700 dark:text-[#9aa5ce]">How making your code more functional can improve its reliability</p>
+  </div>
+  <div class="mt-6 text-gray-900 dark:text-[#2ac3de]">
+    <button type="button" onclick="history.back()" class="cursor-pointer">cd ..</button>
+  </div>
+  <div class="post-content mt-4 text-justify leading-7 text-gray-700 dark:text-[#9aa5ce] overflow-x-auto">
+    <p>Have you ever had to chase a bug that only appeared under specific conditions? Or spent time trying to understand why some state changed unexpectedly? You probably already felt the pain that functional programming tries to solve.</p>
+<p>The main idea is making your code more predictable. No hidden side effects, no data changing under your feet, errors as values instead of invisible exceptions flying through your call stack. Easier to reason about, easier to test, easier to trust.</p>
+<p>I'm not saying you should rewrite everything in Haskell or go full functional overnight. But I do think some of these patterns can make a real difference in your Python code today, even in an OOP codebase. Let's take a look at: pattern matching, algebraic data types, the result pattern, railroad oriented programming, functional core/imperative shell, and parse don't validate.</p>
+<h3>Pattern Matching</h3>
+<p>Let's start with one of the best ways to improve the code expressiveness, the <a href="https://docs.python.org/3/tutorial/controlflow.html#tut-match">Pattern Matching</a>,
+pattern matching is a mechanism for checking values against some pattern and also meet some condition.
+Let's take a look:</p>
+<pre class="lumis" style="color: #c0caf5; background-color: #24283b;"><code class="language-python" translate="no" tabindex="0"><div class="line" data-line="1"><span style="color: #9d7cd8;">match</span> <span style="color: #c0caf5;">status</span>:
+</div><div class="line" data-line="2">  <span style="color: #9d7cd8;">case</span> <span style="color: #ff9e64;">400</span>:
+</div><div class="line" data-line="3">    <span style="color: #9d7cd8;">return</span> <span style="color: #9ece6a;">&quot;Bad request&quot;</span>
+</div><div class="line" data-line="4">  <span style="color: #9d7cd8;">case</span> <span style="color: #ff9e64;">404</span>:
+</div><div class="line" data-line="5">    <span style="color: #9d7cd8;">return</span> <span style="color: #9ece6a;">&quot;Not found&quot;</span>
+</div><div class="line" data-line="6">  <span style="color: #9d7cd8;">case</span> _:
+</div><div class="line" data-line="7">    <span style="color: #565f89;"># else equivalent</span>
+</div></code></pre>
+<p>It looks a lot like a switch, having one of the best parts of switch, the easy readability. But let's explore more:</p>
+<pre class="lumis" style="color: #c0caf5; background-color: #24283b;"><code class="language-python" translate="no" tabindex="0"><div class="line" data-line="1"><span style="color: #565f89;"># combining several literals</span>
+</div><div class="line" data-line="2"><span style="color: #9d7cd8;">match</span> <span style="color: #c0caf5;">status</span>:
+</div><div class="line" data-line="3">  <span style="color: #9d7cd8;">case</span> <span style="color: #ff9e64;">500</span> <span style="color: #89ddff;">|</span> <span style="color: #ff9e64;">501</span> <span style="color: #89ddff;">|</span> <span style="color: #ff9e64;">503</span>: 
+</div><div class="line" data-line="4">    <span style="color: #9d7cd8;">return</span> <span style="color: #9ece6a;">&quot;Some server error&quot;</span>
+</div><div class="line" data-line="5">
+</div><div class="line" data-line="6"><span style="color: #565f89;"># accessing structure values</span>
+</div><div class="line" data-line="7"><span style="color: #c0caf5;">coordinate</span> <span style="color: #89ddff;">=</span> (<span style="color: #ff9e64;">4</span>, <span style="color: #ff9e64;">2</span>)
+</div><div class="line" data-line="8"><span style="color: #9d7cd8;">match</span> <span style="color: #c0caf5;">coordinate</span>:
+</div><div class="line" data-line="9">  <span style="color: #9d7cd8;">case</span> (<span style="color: #ff9e64;">0</span>, <span style="color: #ff9e64;">0</span>):
+</div><div class="line" data-line="10">    <span style="color: #2ac3de;">print</span>(<span style="color: #9ece6a;">&quot;Origin&quot;</span>)
+</div><div class="line" data-line="11">  <span style="color: #9d7cd8;">case</span> (<span style="color: #ff9e64;">0</span>, <span style="color: #c0caf5;">y</span>):
+</div><div class="line" data-line="12">    <span style="color: #2ac3de;">print</span>(<span style="color: #9ece6a;">f&quot;just Y axis with the value: </span><span style="color: #89ddff;">&lbrace;</span><span style="color: #c0caf5;">y</span><span style="color: #89ddff;">&rbrace;</span><span style="color: #9ece6a;">&quot;</span>)
+</div><div class="line" data-line="13">  <span style="color: #9d7cd8;">case</span> (<span style="color: #c0caf5;">x</span>, <span style="color: #ff9e64;">0</span>):
+</div><div class="line" data-line="14">    <span style="color: #2ac3de;">print</span>(<span style="color: #9ece6a;">f&quot;just X axis with the value: </span><span style="color: #89ddff;">&lbrace;</span><span style="color: #c0caf5;">x</span><span style="color: #89ddff;">&rbrace;</span><span style="color: #9ece6a;">&quot;</span>)
+</div><div class="line" data-line="15">  <span style="color: #9d7cd8;">case</span> (<span style="color: #c0caf5;">x</span>, <span style="color: #c0caf5;">y</span>):
+</div><div class="line" data-line="16">    <span style="color: #2ac3de;">print</span>(<span style="color: #9ece6a;">f&quot;current coordinate: X=</span><span style="color: #89ddff;">&lbrace;</span><span style="color: #c0caf5;">x</span><span style="color: #89ddff;">&rbrace;</span><span style="color: #9ece6a;"> and Y=</span><span style="color: #89ddff;">&lbrace;</span><span style="color: #c0caf5;">y</span><span style="color: #89ddff;">&rbrace;</span><span style="color: #9ece6a;">&quot;</span>)
+</div><div class="line" data-line="17">
+</div><div class="line" data-line="18"><span style="color: #565f89;"># guards</span>
+</div><div class="line" data-line="19"><span style="color: #c0caf5;">arr</span> <span style="color: #89ddff;">=</span> [<span style="color: #ff9e64;">1</span>,<span style="color: #ff9e64;">2</span>]
+</div><div class="line" data-line="20"><span style="color: #9d7cd8;">match</span> <span style="color: #c0caf5;">arr</span>:
+</div><div class="line" data-line="21">  <span style="color: #9d7cd8;">case</span> []:
+</div><div class="line" data-line="22">    <span style="color: #2ac3de;">print</span>(<span style="color: #9ece6a;">&quot;empty&quot;</span>)
+</div><div class="line" data-line="23">  <span style="color: #9d7cd8;">case</span> [_, <span style="color: #c0caf5;">second</span>]:
+</div><div class="line" data-line="24">    <span style="color: #2ac3de;">print</span>(<span style="color: #9ece6a;">f&quot;second value: </span><span style="color: #89ddff;">&lbrace;</span><span style="color: #c0caf5;">second</span><span style="color: #89ddff;">&rbrace;</span><span style="color: #9ece6a;">&quot;</span>)
+</div><div class="line" data-line="25">  <span style="color: #9d7cd8;">case</span> [<span style="color: #c0caf5;">first</span>, <span style="color: #c0caf5;">second</span>] <span style="color: #9d7cd8;">if</span> <span style="color: #c0caf5;">second</span> <span style="color: #89ddff;">&gt;</span> <span style="color: #c0caf5;">first</span>:
+</div><div class="line" data-line="26">    <span style="color: #2ac3de;">print</span>(<span style="color: #9ece6a;">f&quot;second greater than first&quot;</span>)
+</div></code></pre>
+<p>Like you can see, pattern matching can be a great ally when you need to make complex conditions over structures and values, in an easy
+way.</p>
+<h3>Type System</h3>
+<p>I think everybody likes the type system in languages, maybe isn't the best, but at least can help you find silly typos, but in fact it
+is a very powerful tool. Let's check how it can improve your code reliability, readability.</p>
+<h4>Algebraic Data Types</h4>
+<p>Algebraic data types are a way of creating types by combining other types. This is helpful specially when you create your own types.
+An ADT is defined for being a <code>sum</code> type or a <code>product</code> type, maybe the name isn't familiar, but you probably already use them.</p>
+<p>A sum type is a range of values that can be chosen, like a boolean, that is an example of sum type. The name came from the number of
+possibilities, that is the sum of all possible values.
+Product types are different, they combine types instead of make you choose, an example is tuples or records. The name came from the
+cartesian product of the sets of its components types, that means that it's the cartesian product of all possible values from each type
+it combine.
+They also are referred as <code>OR</code> and <code>AND</code>, because the sum type is a choice between the values, a <code>OR</code>, and the product type is a
+combination types, a <code>AND</code>.</p>
+<p>Ok, give a quick summary of what they are, no code, poor examples, but how you can improve your code using ADT's, right? Well,
+like said earlier, the possibility of creating types is a powerful way to model the business logic into your code. To give an example,
+let's think on a order that can have a status of <code>open</code> or <code>closed</code>, you can define it using ADT's like that.</p>
+<pre class="lumis" style="color: #c0caf5; background-color: #24283b;"><code class="language-python" translate="no" tabindex="0"><div class="line" data-line="1"><span style="color: #9d7cd8;">from</span> <span style="color: #c0caf5;">dataclasses</span> <span style="color: #9d7cd8;">import</span> <span style="color: #c0caf5;">dataclass</span>
+</div><div class="line" data-line="2">
+</div><div class="line" data-line="3"><span style="color: #7aa2f7;">@</span><span style="color: #7aa2f7;">dataclass</span><span style="color: #7aa2f7;">(</span><span style="color: #c0caf5;">frozen</span><span style="color: #89ddff;">=</span><span style="color: #2ac3de;">True</span><span style="color: #7aa2f7;">) </span><span style="color: #565f89;"># ensure our immutability</span>
+</div><div class="line" data-line="4"><span style="color: #9d7cd8;">class</span> <span style="color: #bb9af7;">Order</span>: <span style="color: #565f89;"># product type</span>
+</div><div class="line" data-line="5">  <span style="color: #c0caf5;">status</span>: <span style="color: #bb9af7;">Literal</span>[<span style="color: #9ece6a;">&quot;open&quot;</span>, <span style="color: #9ece6a;">&quot;closed&quot;</span>] <span style="color: #565f89;"># sum type</span>
+</div></code></pre>
+<p>That way you ensure that the only possible values for status is <code>open</code> or <code>closed</code> and everytime you create a order structure it
+need to follow that pattern or will not pass in the type checker.
+Another cool thing that will help you ensuring that the business logic is being applied right, is using <a href="https://rustc-dev-guide.rust-lang.org/pat-exhaustive-checking.html">exhaustiveness checking</a>.
+The idea is that in a condition it will never reach some pattern/condition, like:</p>
+<pre class="lumis" style="color: #c0caf5; background-color: #24283b;"><code class="language-python" translate="no" tabindex="0"><div class="line" data-line="1"><span style="color: #9d7cd8;">from</span> <span style="color: #c0caf5;">typing</span> <span style="color: #9d7cd8;">import</span> <span style="color: #c0caf5;">assert_never</span>
+</div><div class="line" data-line="2">
+</div><div class="line" data-line="3"><span style="color: #c0caf5;">order</span> <span style="color: #89ddff;">=</span> <span style="color: #7aa2f7;">Order</span>(<span style="color: #c0caf5;">status</span><span style="color: #89ddff;">=</span><span style="color: #9ece6a;">&quot;open&quot;</span>)
+</div><div class="line" data-line="4"><span style="color: #9d7cd8;">match</span> <span style="color: #c0caf5;">order</span>:
+</div><div class="line" data-line="5">  <span style="color: #9d7cd8;">case</span> <span style="color: #bb9af7;">Order</span>(<span style="color: #c0caf5;">status</span><span style="color: #89ddff;">=</span><span style="color: #9ece6a;">&quot;open&quot;</span>):
+</div><div class="line" data-line="6">    <span style="color: #2ac3de;">print</span>(<span style="color: #9ece6a;">&quot;order with status open&quot;</span>)
+</div><div class="line" data-line="7">  <span style="color: #9d7cd8;">case</span> <span style="color: #bb9af7;">Order</span>(<span style="color: #c0caf5;">status</span><span style="color: #89ddff;">=</span><span style="color: #9ece6a;">&quot;closed&quot;</span>):
+</div><div class="line" data-line="8">    <span style="color: #2ac3de;">print</span>(<span style="color: #9ece6a;">&quot;order with status closed&quot;</span>)
+</div><div class="line" data-line="9">  <span style="color: #9d7cd8;">case</span> _ <span style="color: #9d7cd8;">as</span> <span style="color: #c0caf5;">unreachable</span>:
+</div><div class="line" data-line="10">    <span style="color: #7aa2f7;">assert_never</span>(<span style="color: #c0caf5;">unreachable</span>)
+</div></code></pre>
+<p>If we add a new status to our order structure, the type checker will complain about reaching a pattern that was to be unreachable,
+since the new status is not defined on the previous pattern matching. This is awesome because will help you modify your business logic
+without ignoring the modifications.</p>
+<h4>Bounded Types/New Types</h4>
+<p>Bounded types or new types are just a fancy name of subtyping and of course is useful for code readability and type narrowing, for example:
+Let's say you have the values name and email from your user and also <code>send_email</code> function, to make safer you could do:</p>
+<pre class="lumis" style="color: #c0caf5; background-color: #24283b;"><code class="language-python" translate="no" tabindex="0"><div class="line" data-line="1"><span style="color: #9d7cd8;">from</span> <span style="color: #c0caf5;">typing</span> <span style="color: #9d7cd8;">import</span> <span style="color: #bb9af7;">NewType</span>
+</div><div class="line" data-line="2">
+</div><div class="line" data-line="3"><span style="color: #bb9af7;">UserEmail</span> <span style="color: #89ddff;">=</span> <span style="color: #7aa2f7;">NewType</span>(<span style="color: #9ece6a;">&quot;UserEmail&quot;</span>, <span style="color: #c0caf5;">str</span>)
+</div><div class="line" data-line="4"><span style="color: #bb9af7;">UserName</span> <span style="color: #89ddff;">=</span> <span style="color: #7aa2f7;">NewType</span>(<span style="color: #9ece6a;">&quot;UserName&quot;</span>, <span style="color: #c0caf5;">str</span>)
+</div><div class="line" data-line="5">
+</div><div class="line" data-line="6"><span style="color: #c0caf5;">name</span> <span style="color: #89ddff;">=</span> <span style="color: #7aa2f7;">UserName</span>(<span style="color: #9ece6a;">&quot;john&quot;</span>)
+</div><div class="line" data-line="7"><span style="color: #c0caf5;">email</span> <span style="color: #89ddff;">=</span> <span style="color: #7aa2f7;">UserEmail</span>(<span style="color: #9ece6a;">&quot;john@email.com&quot;</span>)
+</div><div class="line" data-line="8">
+</div><div class="line" data-line="9"><span style="color: #9d7cd8;">def</span> <span style="color: #7aa2f7;">send_email</span>(<span style="color: #c0caf5;">email</span>: <span style="color: #2ac3de;">UserEmail</span>):
+</div><div class="line" data-line="10">  <span style="color: #565f89;"># send the email</span>
+</div></code></pre>
+<p>and if you passed the name to the <code>send_email</code> func instead of the email, you're going to receive a type error. Also,
+you can use narrow typing, that way you not only guarantee that you pass the correct type value, but also ensure that the
+value indeed follows what the type means, like being a real email.</p>
+<h3>Result Pattern</h3>
+<p>One of the worst things of some languages are the way they handle errors, exceptions are not the best approach, and can be
+very confusing when you just &quot;goto&quot; some place on the code that you're not expecting or bubbling up the exception to  the
+exception of the caller, and bubbling up to the another exception...
+Returning the error as a value is easier to understand, but just that still needs checking and we are on the same problem of bubbling up
+exceptions. That's why some functional languages(Haskell, Rust) use the result pattern, a way of returning either the error or the
+value. Enough poor explanation, let's check it out how we can do it in python:</p>
+<p>First, we're going to create the result type to use</p>
+<pre class="lumis" style="color: #c0caf5; background-color: #24283b;"><code class="language-python" translate="no" tabindex="0"><div class="line" data-line="1"><span style="color: #7aa2f7;">@</span><span style="color: #7aa2f7;">dataclass</span><span style="color: #7aa2f7;">(</span><span style="color: #c0caf5;">frozen</span><span style="color: #89ddff;">=</span><span style="color: #2ac3de;">True</span><span style="color: #7aa2f7;">)</span>
+</div><div class="line" data-line="2"><span style="color: #9d7cd8;">class</span> <span style="color: #bb9af7;">Ok</span>[<span style="color: #2ac3de;">T</span>, <span style="color: #2ac3de;">E</span>]:
+</div><div class="line" data-line="3">  <span style="color: #c0caf5;">value</span>: <span style="color: #2ac3de;">T</span>
+</div><div class="line" data-line="4">
+</div><div class="line" data-line="5"><span style="color: #7aa2f7;">@</span><span style="color: #7aa2f7;">dataclass</span><span style="color: #7aa2f7;">(</span><span style="color: #c0caf5;">frozen</span><span style="color: #89ddff;">=</span><span style="color: #2ac3de;">True</span><span style="color: #7aa2f7;">)</span>
+</div><div class="line" data-line="6"><span style="color: #9d7cd8;">class</span> <span style="color: #bb9af7;">Err</span>[<span style="color: #2ac3de;">T</span>, <span style="color: #2ac3de;">E</span>]:
+</div><div class="line" data-line="7">  <span style="color: #c0caf5;">error</span>: <span style="color: #2ac3de;">E</span>
+</div><div class="line" data-line="8">
+</div><div class="line" data-line="9">type <span style="color: #bb9af7;">Result</span>[<span style="color: #2ac3de;">T</span> ,<span style="color: #2ac3de;">E</span>] <span style="color: #89ddff;">=</span> <span style="color: #bb9af7;">Ok</span>[<span style="color: #2ac3de;">T</span>, <span style="color: #2ac3de;">E</span>] <span style="color: #89ddff;">|</span> <span style="color: #bb9af7;">Err</span>[<span style="color: #2ac3de;">T</span>, <span style="color: #2ac3de;">E</span>]
+</div></code></pre>
+<p>Now let's use it on some function:</p>
+<pre class="lumis" style="color: #c0caf5; background-color: #24283b;"><code class="language-python" translate="no" tabindex="0"><div class="line" data-line="1">type <span style="color: #2ac3de;">Errors</span> <span style="color: #89ddff;">=</span> <span style="color: #bb9af7;">Literal</span>[<span style="color: #9ece6a;">&quot;InvalidEmail&quot;</span>]
+</div><div class="line" data-line="2">
+</div><div class="line" data-line="3"><span style="color: #9d7cd8;">def</span> <span style="color: #7aa2f7;">validate_email</span>(<span style="color: #c0caf5;">email</span>: <span style="color: #2ac3de;">str</span>) <span style="color: #89ddff;">-&gt;</span> <span style="color: #bb9af7;">Result</span>[<span style="color: #2ac3de;">UserEmail</span>, <span style="color: #2ac3de;">Errors</span>]:
+</div><div class="line" data-line="4">  <span style="color: #9d7cd8;">if</span> <span style="color: #9ece6a;">&quot;@&quot;</span> <span style="color: #89ddff;">in</span> <span style="color: #c0caf5;">email</span>:
+</div><div class="line" data-line="5">    <span style="color: #9d7cd8;">return</span> <span style="color: #7aa2f7;">Ok</span>(<span style="color: #7aa2f7;">UserEmail</span>(<span style="color: #c0caf5;">email</span>))
+</div><div class="line" data-line="6">  <span style="color: #9d7cd8;">return</span> <span style="color: #7aa2f7;">Err</span>(<span style="color: #9ece6a;">&quot;InvalidEmail&quot;</span>)
+</div><div class="line" data-line="7">
+</div><div class="line" data-line="8"><span style="color: #565f89;"># calling the function</span>
+</div><div class="line" data-line="9"><span style="color: #c0caf5;">value</span> <span style="color: #89ddff;">=</span> <span style="color: #7aa2f7;">validate_email</span>(<span style="color: #9ece6a;">&quot;wrong_email&quot;</span>) <span style="color: #565f89;"># will return Err(&quot;Invalid email&quot;)</span>
+</div></code></pre>
+<p>Look how it makes the code more concise and easy to read, of course I still need to show you how to solve the bubbling up problem and
+that's we gonna do right below.</p>
+<h3>Railroad Oriented Programming</h3>
+<p>So you already implemented the result pattern but don't want a lot of condition checker on your code, how you can avoid that? Using
+the railroad oriented programming, and what is that? It's the idea of just following the &quot;success&quot; railway only if it got success values,
+the <code>Ok()</code> values in our case, otherwise &quot;switch&quot; to the &quot;failure&quot; railway. That we can chain function calls and get back the
+result of these operations or the error.</p>
+<p>Let's modify our result pattern to use ROP:</p>
+<pre class="lumis" style="color: #c0caf5; background-color: #24283b;"><code class="language-python" translate="no" tabindex="0"><div class="line" data-line="1"><span style="color: #9d7cd8;">from</span> <span style="color: #c0caf5;">typing</span> <span style="color: #9d7cd8;">import</span> <span style="color: #bb9af7;">Callable</span>, <span style="color: #c0caf5;">cast</span>
+</div><div class="line" data-line="2">
+</div><div class="line" data-line="3">
+</div><div class="line" data-line="4"><span style="color: #9d7cd8;">class</span> <span style="color: #bb9af7;">Result</span>[<span style="color: #2ac3de;">T</span>, <span style="color: #2ac3de;">E</span>]:
+</div><div class="line" data-line="5">  <span style="color: #9d7cd8;">def</span> <span style="color: #7aa2f7;">bind</span>[<span style="color: #2ac3de;">U</span>](<span style="color: #c0caf5;">self</span>, <span style="color: #c0caf5;">fn</span>: <span style="color: #bb9af7;">Callable</span>[<span style="color: #2ac3de;">T</span>, <span style="color: #bb9af7;">Result</span>[<span style="color: #2ac3de;">U</span>, <span style="color: #2ac3de;">E</span>]]) <span style="color: #89ddff;">-&gt;</span> <span style="color: #bb9af7;">Result</span>[<span style="color: #2ac3de;">U</span>, <span style="color: #2ac3de;">E</span>]
+</div><div class="line" data-line="6">    <span style="color: #c0caf5;">if</span> <span style="color: #2ac3de;">isinstance</span>(<span style="color: #c0caf5;">self</span>, <span style="color: #bb9af7;">Ok</span>):
+</div><div class="line" data-line="7">      <span style="color: #9d7cd8;">return</span> <span style="color: #7aa2f7;">fn</span>(<span style="color: #c0caf5;">self</span>.<span style="color: #73daca;">value</span>)
+</div><div class="line" data-line="8">    <span style="color: #9d7cd8;">return</span> <span style="color: #7aa2f7;">cast</span>(<span style="color: #bb9af7;">Result</span>[<span style="color: #ff9e64;">U</span>, <span style="color: #ff9e64;">E</span>], <span style="color: #c0caf5;">self</span>)
+</div><div class="line" data-line="9">
+</div><div class="line" data-line="10">  <span style="color: #9d7cd8;">def</span> <span style="color: #7aa2f7;">wrap</span>(<span style="color: #c0caf5;">self</span>, <span style="color: #c0caf5;">value</span>: <span style="color: #2ac3de;">T</span>) <span style="color: #89ddff;">-&gt;</span> <span style="color: #bb9af7;">Result</span>[<span style="color: #2ac3de;">T</span>, <span style="color: #2ac3de;">E</span>]:
+</div><div class="line" data-line="11">    <span style="color: #9d7cd8;">return</span> <span style="color: #7aa2f7;">Ok</span>(<span style="color: #c0caf5;">value</span>)
+</div><div class="line" data-line="12">
+</div><div class="line" data-line="13">  <span style="color: #9d7cd8;">def</span> <span style="color: #7aa2f7;">unwrap</span>(<span style="color: #c0caf5;">self</span>) <span style="color: #89ddff;">-&gt;</span> <span style="color: #2ac3de;">T</span>:
+</div><div class="line" data-line="14">    <span style="color: #9d7cd8;">match</span> <span style="color: #c0caf5;">self</span>:
+</div><div class="line" data-line="15">      <span style="color: #9d7cd8;">case</span> <span style="color: #bb9af7;">Ok</span>(<span style="color: #c0caf5;">value</span><span style="color: #89ddff;">=</span><span style="color: #c0caf5;">value</span>):
+</div><div class="line" data-line="16">        <span style="color: #9d7cd8;">return</span> <span style="color: #c0caf5;">value</span>
+</div><div class="line" data-line="17">      <span style="color: #9d7cd8;">case</span> <span style="color: #bb9af7;">Err</span>(<span style="color: #c0caf5;">error</span><span style="color: #89ddff;">=</span><span style="color: #c0caf5;">error</span>):
+</div><div class="line" data-line="18">        <span style="color: #9d7cd8;">raise</span> <span style="color: #7aa2f7;">ValueError</span>(<span style="color: #9ece6a;">f&quot;Unwrap called on Err: </span><span style="color: #89ddff;">&lbrace;</span><span style="color: #c0caf5;">error</span><span style="color: #89ddff;">&rbrace;</span><span style="color: #9ece6a;">&quot;</span>)
+</div><div class="line" data-line="19">
+</div><div class="line" data-line="20">  <span style="color: #9d7cd8;">def</span> <span style="color: #7aa2f7;">unwrap_err</span>(<span style="color: #c0caf5;">self</span>) <span style="color: #89ddff;">-&gt;</span> <span style="color: #2ac3de;">E</span>:
+</div><div class="line" data-line="21">    <span style="color: #9d7cd8;">match</span> <span style="color: #c0caf5;">self</span>:
+</div><div class="line" data-line="22">      <span style="color: #9d7cd8;">case</span> <span style="color: #bb9af7;">Err</span>(<span style="color: #c0caf5;">error</span><span style="color: #89ddff;">=</span><span style="color: #c0caf5;">error</span>):
+</div><div class="line" data-line="23">        <span style="color: #9d7cd8;">return</span> <span style="color: #c0caf5;">error</span>
+</div><div class="line" data-line="24">      <span style="color: #9d7cd8;">case</span> <span style="color: #bb9af7;">Ok</span>(<span style="color: #c0caf5;">value</span><span style="color: #89ddff;">=</span><span style="color: #c0caf5;">value</span>):
+</div><div class="line" data-line="25">        <span style="color: #9d7cd8;">raise</span> <span style="color: #7aa2f7;">ValueError</span>(<span style="color: #9ece6a;">f&quot;Unwrap_err called on Ok: </span><span style="color: #89ddff;">&lbrace;</span><span style="color: #c0caf5;">value</span><span style="color: #89ddff;">&rbrace;</span><span style="color: #9ece6a;">&quot;</span>)
+</div><div class="line" data-line="26">
+</div><div class="line" data-line="27">
+</div><div class="line" data-line="28"><span style="color: #7aa2f7;">@</span><span style="color: #7aa2f7;">dataclass</span><span style="color: #7aa2f7;">(</span><span style="color: #c0caf5;">frozen</span><span style="color: #89ddff;">=</span><span style="color: #2ac3de;">True</span><span style="color: #7aa2f7;">)</span>
+</div><div class="line" data-line="29"><span style="color: #9d7cd8;">class</span> <span style="color: #bb9af7;">Ok</span>[<span style="color: #2ac3de;">T</span>, <span style="color: #2ac3de;">E</span>](<span style="color: #bb9af7;">Result</span>[<span style="color: #ff9e64;">T</span>, <span style="color: #ff9e64;">E</span>]):
+</div><div class="line" data-line="30">  <span style="color: #c0caf5;">value</span>: <span style="color: #2ac3de;">T</span>
+</div><div class="line" data-line="31">
+</div><div class="line" data-line="32"><span style="color: #7aa2f7;">@</span><span style="color: #7aa2f7;">dataclass</span><span style="color: #7aa2f7;">(</span><span style="color: #c0caf5;">frozen</span><span style="color: #89ddff;">=</span><span style="color: #2ac3de;">True</span><span style="color: #7aa2f7;">)</span>
+</div><div class="line" data-line="33"><span style="color: #9d7cd8;">class</span> <span style="color: #bb9af7;">Err</span>[<span style="color: #2ac3de;">T</span>, <span style="color: #2ac3de;">E</span>](<span style="color: #bb9af7;">Result</span>[<span style="color: #ff9e64;">T</span>, <span style="color: #ff9e64;">E</span>]):
+</div><div class="line" data-line="34">  <span style="color: #c0caf5;">error</span>: <span style="color: #2ac3de;">E</span>
+</div><div class="line" data-line="35">
+</div></code></pre>
+<p>Nice, what you need to get: the <code>bind</code> is our &quot;main&quot; function, it will do the &quot;switch&quot; if necessary, and the <code>wrap</code>, <code>unwrap</code>, <code>unwrap_err</code> functions
+are just helpers to deal with the inner values.
+Using it:</p>
+<pre class="lumis" style="color: #c0caf5; background-color: #24283b;"><code class="language-python" translate="no" tabindex="0"><div class="line" data-line="1"><span style="color: #c0caf5;">email</span> <span style="color: #89ddff;">=</span> (
+</div><div class="line" data-line="2">  <span style="color: #7aa2f7;">wrap</span>(<span style="color: #9ece6a;">&quot;user_email&quot;</span>)
+</div><div class="line" data-line="3">  .<span style="color: #73daca;">bind</span>(<span style="color: #c0caf5;">validate_email</span>)
+</div><div class="line" data-line="4">)
+</div><div class="line" data-line="5">
+</div><div class="line" data-line="6"><span style="color: #c0caf5;">result</span> <span style="color: #89ddff;">=</span> <span style="color: #7aa2f7;">send_email</span>(<span style="color: #c0caf5;">email</span>)
+</div><div class="line" data-line="7">
+</div><div class="line" data-line="8"><span style="color: #9d7cd8;">match</span> <span style="color: #c0caf5;">result</span>:
+</div><div class="line" data-line="9">  <span style="color: #9d7cd8;">case</span> <span style="color: #bb9af7;">Ok</span>():
+</div><div class="line" data-line="10">    <span style="color: #2ac3de;">print</span>(<span style="color: #9ece6a;">&quot;email sent&quot;</span>)
+</div><div class="line" data-line="11">  <span style="color: #9d7cd8;">case</span> <span style="color: #bb9af7;">Err</span>(<span style="color: #9ece6a;">&quot;InvalidEmail&quot;</span>):
+</div><div class="line" data-line="12">    <span style="color: #2ac3de;">print</span>(<span style="color: #9ece6a;">&quot;invalid email&quot;</span>)
+</div><div class="line" data-line="13">  ... <span style="color: #565f89;"># other errors</span>
+</div></code></pre>
+<p>And we can chain a lot of functions and if some of it gave some error we can receive and pattern match the error, awesome right?</p>
+<h3>Functional Core, Imperative Shell</h3>
+<p>Until now I showed to you how you can structure your code using pattern matching, ADT's and ROP, making it more clean, readable and reliable.
+But one thing that we can't predict, is how our code deal with the external world, a.k.a IO, and for that the functional programming
+has a name: impure/side effect functions.
+These are function that you need to make sure to not mix with your business logic or try, at least, for that you gonna want to &quot;move to
+the edge&quot; of your program execution flow, that way will be easier to reason, test and determine your business logic.
+For that you can use the <a href="https://functional-architecture.org/functional_core_imperative_shell/">functional core, imperative shell</a> pattern,
+and yes, it look a lot like port and adapters, that's why I just want to say about the main idea of both, separate what you can predict
+from what you can't.
+Let's see how it looks using the <code>send_email</code> example:</p>
+<pre class="lumis" style="color: #c0caf5; background-color: #24283b;"><code class="language-python" translate="no" tabindex="0"><div class="line" data-line="1"><span style="color: #565f89;"># functional core: pure, no IO</span>
+</div><div class="line" data-line="2"><span style="color: #9d7cd8;">def</span> <span style="color: #7aa2f7;">process_email</span>(<span style="color: #c0caf5;">raw_email</span>: <span style="color: #2ac3de;">str</span>) <span style="color: #89ddff;">-&gt;</span> <span style="color: #bb9af7;">Result</span>[<span style="color: #2ac3de;">UserEmail</span>, <span style="color: #2ac3de;">Errors</span>]:
+</div><div class="line" data-line="3">  <span style="color: #9d7cd8;">return</span> <span style="color: #7aa2f7;">validate_email</span>(<span style="color: #c0caf5;">raw_email</span>)
+</div><div class="line" data-line="4">
+</div><div class="line" data-line="5"><span style="color: #565f89;"># imperative shell: IO lives here</span>
+</div><div class="line" data-line="6"><span style="color: #9d7cd8;">def</span> <span style="color: #7aa2f7;">handle_email</span>(<span style="color: #c0caf5;">raw_email</span>: <span style="color: #2ac3de;">str</span>):
+</div><div class="line" data-line="7">  <span style="color: #9d7cd8;">match</span> <span style="color: #7aa2f7;">process_email</span>(<span style="color: #c0caf5;">raw_email</span>):
+</div><div class="line" data-line="8">    <span style="color: #9d7cd8;">case</span> <span style="color: #bb9af7;">Ok</span>(<span style="color: #c0caf5;">value</span><span style="color: #89ddff;">=</span><span style="color: #c0caf5;">email</span>):
+</div><div class="line" data-line="9">      <span style="color: #7aa2f7;">send_email</span>(<span style="color: #c0caf5;">email</span>)
+</div><div class="line" data-line="10">    <span style="color: #9d7cd8;">case</span> <span style="color: #bb9af7;">Err</span>(<span style="color: #c0caf5;">error</span><span style="color: #89ddff;">=</span><span style="color: #c0caf5;">error</span>):
+</div><div class="line" data-line="11">      <span style="color: #2ac3de;">print</span>(<span style="color: #9ece6a;">f&quot;Error: </span><span style="color: #89ddff;">&lbrace;</span><span style="color: #c0caf5;">error</span><span style="color: #89ddff;">&rbrace;</span><span style="color: #9ece6a;">&quot;</span>)
+</div></code></pre>
+<p><code>process_email</code> is pure and easy to test, <code>handle_email</code> is where the IO lives. That separation makes a real difference,
+because you can test all your business logic without mocking anything, and when something breaks you already know
+if the problem is in the logic or in the IO.</p>
+<h3>Parse, Don't Validate</h3>
+<p>If you use FastAPI you're using this idea, and in summary it is about parsing your values in the edge of your program to trustable types instead
+of validate them.
+Parse the structure from the external world, parse from one &quot;stage&quot; to another, use new types to enforce a constraint and even type your
+return.
+Still foggy? Let's see some code:</p>
+<pre class="lumis" style="color: #c0caf5; background-color: #24283b;"><code class="language-python" translate="no" tabindex="0"><div class="line" data-line="1"><span style="color: #9d7cd8;">from</span> <span style="color: #c0caf5;">enum</span> <span style="color: #9d7cd8;">import</span> <span style="color: #bb9af7;">StrEnum</span>
+</div><div class="line" data-line="2">
+</div><div class="line" data-line="3"><span style="color: #9d7cd8;">class</span> <span style="color: #bb9af7;">OrderStatus</span>(<span style="color: #bb9af7;">StrEnum</span>):
+</div><div class="line" data-line="4">  <span style="color: #c0caf5;">open</span> <span style="color: #89ddff;">=</span> <span style="color: #9ece6a;">&quot;open&quot;</span>
+</div><div class="line" data-line="5">  <span style="color: #c0caf5;">closed</span> <span style="color: #89ddff;">=</span> <span style="color: #9ece6a;">&quot;closed&quot;</span>
+</div><div class="line" data-line="6">
+</div><div class="line" data-line="7"><span style="color: #7aa2f7;">@</span><span style="color: #7aa2f7;">dataclass</span><span style="color: #7aa2f7;">(</span><span style="color: #c0caf5;">frozen</span><span style="color: #89ddff;">=</span><span style="color: #2ac3de;">True</span><span style="color: #7aa2f7;">)</span>
+</div><div class="line" data-line="8"><span style="color: #9d7cd8;">class</span> <span style="color: #bb9af7;">RawOrder</span>:
+</div><div class="line" data-line="9">  <span style="color: #c0caf5;">status</span>: <span style="color: #2ac3de;">str</span>
+</div><div class="line" data-line="10">
+</div><div class="line" data-line="11"><span style="color: #7aa2f7;">@</span><span style="color: #7aa2f7;">dataclass</span><span style="color: #7aa2f7;">(</span><span style="color: #c0caf5;">frozen</span><span style="color: #89ddff;">=</span><span style="color: #2ac3de;">True</span><span style="color: #7aa2f7;">)</span>
+</div><div class="line" data-line="12"><span style="color: #9d7cd8;">class</span> <span style="color: #bb9af7;">Order</span>:
+</div><div class="line" data-line="13">  <span style="color: #c0caf5;">status</span>: <span style="color: #2ac3de;">OrderStatus</span>
+</div><div class="line" data-line="14">
+</div><div class="line" data-line="15"><span style="color: #7aa2f7;">@</span><span style="color: #7aa2f7;">dataclass</span><span style="color: #7aa2f7;">(</span><span style="color: #c0caf5;">frozen</span><span style="color: #89ddff;">=</span><span style="color: #2ac3de;">True</span><span style="color: #7aa2f7;">)</span>
+</div><div class="line" data-line="16"><span style="color: #9d7cd8;">class</span> <span style="color: #bb9af7;">InvalidOrder</span>:
+</div><div class="line" data-line="17">  <span style="color: #c0caf5;">reason</span>: <span style="color: #2ac3de;">str</span>
+</div><div class="line" data-line="18">
+</div><div class="line" data-line="19"><span style="color: #9d7cd8;">def</span> <span style="color: #7aa2f7;">parse_order</span>(<span style="color: #c0caf5;">raw</span>: <span style="color: #2ac3de;">RawOrder</span>) <span style="color: #89ddff;">-&gt;</span> <span style="color: #bb9af7;">Order</span> <span style="color: #89ddff;">|</span> <span style="color: #bb9af7;">InvalidOrder</span>:
+</div><div class="line" data-line="20">  <span style="color: #9d7cd8;">match</span> <span style="color: #c0caf5;">raw</span>.<span style="color: #73daca;">status</span>:
+</div><div class="line" data-line="21">    <span style="color: #9d7cd8;">case</span> <span style="color: #bb9af7;">OrderStatus</span>.<span style="color: #c0caf5;">open</span> <span style="color: #89ddff;">|</span> <span style="color: #bb9af7;">OrderStatus</span>.<span style="color: #c0caf5;">closed</span>:
+</div><div class="line" data-line="22">      <span style="color: #9d7cd8;">return</span> <span style="color: #7aa2f7;">Order</span>(<span style="color: #c0caf5;">status</span><span style="color: #89ddff;">=</span><span style="color: #c0caf5;">raw</span>.<span style="color: #73daca;">status</span>)
+</div><div class="line" data-line="23">    <span style="color: #9d7cd8;">case</span> _:
+</div><div class="line" data-line="24">      <span style="color: #9d7cd8;">return</span> <span style="color: #7aa2f7;">InvalidOrder</span>(
+</div><div class="line" data-line="25">        <span style="color: #c0caf5;">reason</span><span style="color: #89ddff;">=</span><span style="color: #9ece6a;">&quot;Invalid order status&quot;</span>
+</div><div class="line" data-line="26">      )
+</div></code></pre>
+<p>This is an example of parsing on the edge of your program and even on error/invalid input you're still returning an expressive value instead of throwing an exception or returning a raw string error.</p>
+<br>
+Hope you learned something new or are thinking to start applying some of these patterns. You don't need to change your whole codebase, just pick what fits you better. Type system messy? Start annotating more. Error handling painful? Try the result pattern. Complex conditionals? Pattern matching is your friend. I do think that functional programming will make your code more readable and reliable.
+<p>The idea for this post came from reading the <a href="https://blog.rastrian.dev/post/why-reliability-demands-functional-programming-adts-safety-and-critical-infrastructure">Rastrian's blog post</a>, I really recommend you to give it a shot. The references below are also a great next step if you want to go deeper.</p>
+<h3>References</h3>
+<a href="https://blog.rastrian.dev/post/why-reliability-demands-functional-programming-adts-safety-and-critical-infrastructure" class="inline-flex items-center gap-1 font-medium underline underline-offset-2 text-gray-700 hover:text-gray-700/70 dark:no-underline dark:text-[#2ac3de] dark:hover:text-[#2ac3de]/70">
+    <span aria-hidden="true">→</span>Rastrian blog post
+  </a><br>
+<a href="https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/" class="inline-flex items-center gap-1 font-medium underline underline-offset-2 text-gray-700 hover:text-gray-700/70 dark:no-underline dark:text-[#2ac3de] dark:hover:text-[#2ac3de]/70">
+    <span aria-hidden="true">→</span>Parse, Don&#39;t validate
+  </a><br>
+<a href="https://en.wikipedia.org/wiki/Algebraic_data_type" class="inline-flex items-center gap-1 font-medium underline underline-offset-2 text-gray-700 hover:text-gray-700/70 dark:no-underline dark:text-[#2ac3de] dark:hover:text-[#2ac3de]/70">
+    <span aria-hidden="true">→</span>ADT
+  </a><br>
+<a href="https://fsharpforfunandprofit.com/posts/recipe-part2/" class="inline-flex items-center gap-1 font-medium underline underline-offset-2 text-gray-700 hover:text-gray-700/70 dark:no-underline dark:text-[#2ac3de] dark:hover:text-[#2ac3de]/70">
+    <span aria-hidden="true">→</span>ROP
+  </a><br>
+<a href="https://functional-architecture.org/functional_core_imperative_shell/" class="inline-flex items-center gap-1 font-medium underline underline-offset-2 text-gray-700 hover:text-gray-700/70 dark:no-underline dark:text-[#2ac3de] dark:hover:text-[#2ac3de]/70">
+    <span aria-hidden="true">→</span>Functional core, Imperative shell
+  </a><br>
+<a href="https://www.learningtypescript.com/articles/branded-types" class="inline-flex items-center gap-1 font-medium underline underline-offset-2 text-gray-700 hover:text-gray-700/70 dark:no-underline dark:text-[#2ac3de] dark:hover:text-[#2ac3de]/70">
+    <span aria-hidden="true">→</span>Bounded/New Types
+  </a><br>
+  </div>
+</div>
+  </main>
+  <footer class="flex justify-center pb-4 px-4 text-center">
+    <span class="text-gray-700 dark:text-[#9aa5ce]">
+      © 2026
+      <a href="https://blogoski.com/" class="underline">blogoski</a>
+      - Made with Elixir and TailwindCSS
+    </span>
+  </footer>
+</body>
+</html>

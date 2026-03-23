@@ -9,13 +9,14 @@ defmodule Mix.Tasks.Gen.Blog do
   @tags ["elixir"]
   @posts posts: [
     %{
-      title: "foi",
-      desc: "some desc",
-      date: "Dec 03, 2010",
+      title: "Functional programming to improve your python code reliability",
+      desc: "How making your code more functional can improve its reliability",
+      date: "Mar 22, 2026",
       tags: [
-        %{name: "elixir", href: "elixir"}
+        %{name: "elixir", href: "elixir"},
+        %{name: "functional programming", href: "functional-programming"}
       ],
-      href: "my-super-post"
+      href: "functional-python"
     }
   ]
 
@@ -35,7 +36,7 @@ defmodule Mix.Tasks.Gen.Blog do
   end
 
   def post_content(assigns) do
-    content = File.read!("posts/my-super-post.md")
+    content = File.read!("posts/functional-python.md")
     MDEx.to_heex!(content, assigns: assigns, syntax_highlight: [formatter: {:html_inline, theme: "tokyonight_storm"}])
   end
 
@@ -51,13 +52,14 @@ defmodule Mix.Tasks.Gen.Blog do
           blog_desc: "See some of my posts below",
           posts: [
             %{
-              title: "foi",
-              desc: "some desc",
-              date: "Dec 03, 2010",
-              tags: [
-                %{name: "elixir", href: "elixir"}
-              ],
-              href: "my-super-post"
+                title: "Functional programming to improve your python code reliability",
+                desc: "How making your code more functional can improve its reliability",
+                date: "Mar 22, 2026",
+                tags: [
+                  %{name: "elixir", href: "elixir"},
+                  %{name: "functional programming", href: "functional-programming"}
+                ],
+                href: "functional-python"
             }
           ]
         })
@@ -79,13 +81,14 @@ defmodule Mix.Tasks.Gen.Blog do
           tag: "elixir",
           posts: [
             %{
-              title: "foi",
-              desc: "some desc",
-              date: "Dec 03, 2010",
-              tags: [
-                %{name: "elixir", href: "elixir"}
-              ],
-              href: "my-super-post"
+                title: "Functional programming to improve your python code reliability",
+                desc: "How making your code more functional can improve its reliability",
+                date: "Mar 22, 2026",
+                tags: [
+                  %{name: "elixir", href: "elixir"},
+                  %{name: "functional programming", href: "functional-programming"}
+                ],
+                href: "functional-python"
             }
           ]
         })
@@ -104,15 +107,15 @@ defmodule Mix.Tasks.Gen.Blog do
       js_path: "../assets/js/app.js",
       content:
         Blog.Components.posts(%{
-          title: "foi",
-          desc: "some desc",
-          content: post_content(%{name: "jop"})
+          title: "Functional programming to improve your python code reliability",
+          desc: "How making your code more functional can improve its reliability",
+          content: post_content(%{})
         })
     }
 
     base(assigns)
     |> MDEx.to_html!()
-    |> save_content("docs/posts/my-super-post.html")
+    |> save_content("docs/posts/functional-python.html")
   end
 
   def base(assigns) do

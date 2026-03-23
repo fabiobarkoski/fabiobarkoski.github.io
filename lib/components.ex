@@ -1,9 +1,11 @@
 defmodule Blog.Components do
   use Phoenix.Component
 
-  def greet(assigns) do
+  def ref_link(assigns) do
     ~H"""
-      <p class="text-red-500">london, {@name}</p>
+      <a href={@link} class="inline-flex items-center gap-1 font-medium underline underline-offset-2 text-gray-700 hover:text-gray-700/70 dark:no-underline dark:text-[#2ac3de] dark:hover:text-[#2ac3de]/70">
+        <span aria-hidden="true">→</span>{@name}
+      </a><br />
     """
   end
 
@@ -27,6 +29,11 @@ defmodule Blog.Components do
       <meta name="twitter:title" content="Blogoski" />
       <meta name="twitter:description" content="Yet another blog about software development" />
       <link phx-track-static rel="stylesheet" href={@css_path} />
+      <script>
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        }
+      </script>
       <script defer phx-track-static type="text/javascript" src={@js_path}></script>
     </head>
     <body class="bg-[#e2e8f0] dark:bg-[#24283b] min-h-screen">
@@ -134,7 +141,7 @@ defmodule Blog.Components do
       <div class="mt-6 text-gray-900 dark:text-[#2ac3de]">
         <button type="button" onclick="history.back()" class="cursor-pointer">cd ..</button>
       </div>
-      <div class="mt-4 text-justify leading-7 text-gray-700 dark:text-[#9aa5ce] overflow-x-auto">
+      <div class="post-content mt-4 text-justify leading-7 text-gray-700 dark:text-[#9aa5ce] overflow-x-auto">
         {@content}
       </div>
     </div>

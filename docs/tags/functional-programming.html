@@ -15,13 +15,13 @@
   <meta name="twitter:image" content="/assets/img/social-card.png">
   <meta name="twitter:title" content="Blogoski">
   <meta name="twitter:description" content="Yet another blog about software development">
-  <link phx-track-static rel="stylesheet" href="assets/css/app.css">
+  <link phx-track-static rel="stylesheet" href="../assets/css/app.css">
   <script>
     if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       document.documentElement.classList.add('dark');
     }
   </script>
-  <script defer phx-track-static type="text/javascript" src="assets/js/app.js"></script>
+  <script defer phx-track-static type="text/javascript" src="../assets/js/app.js"></script>
 </head>
 <body class="bg-[#e2e8f0] dark:bg-[#24283b] min-h-screen">
   <header>
@@ -53,32 +53,22 @@
   </header>
   <main class="grid min-h-5/6 place-items-center px-4 py-12 sm:px-6 sm:py-24 lg:px-8">
     <div class="text-center w-full max-w-2xl">
-    <h1 class="mt-4 text-3xl font-bold tracking-tight sm:text-5xl text-gray-900 dark:text-[#7aa2f7]">
-      Welcome to my blog:)
-    </h1>
-    <p class="mt-6 text-base leading-7 text-gray-700 dark:text-[#9aa5ce]">See some of my posts below</p>
+    <h1 class="mt-4 text-3xl font-bold tracking-tight sm:text-5xl text-gray-900 dark:text-[#7aa2f7]">functional programming</h1>
+    <p class="mt-6 text-base leading-7 text-gray-700 dark:text-[#9aa5ce]">Articles under functional programming tag</p>
   </div>
-  <div class="w-full max-w-5xl mx-auto mt-10 grid grid-cols-1 gap-x-8 gap-y-8 pt-10 sm:mt-16 sm:pt-16 sm:grid-cols-2 lg:grid-cols-3">
-    <article aria-label="Functional programming to improve your python code reliability" class="flex flex-col items-start justify-between w-full">
-      <div class="flex items-center gap-x-4 text-xs mb-4">
-        <time datetime="Mar 22, 2026" class="text-gray-700 dark:text-[#9aa5ce]">Mar 22, 2026</time>
-        <a href="tags/elixir.html" class="relative z-10 rounded-full bg-gray-50 text-black px-2.5 py-1.5 font-medium hover:bg-[#c0caf5]">
-          elixir
-        </a><a href="tags/functional-programming.html" class="relative z-10 rounded-full bg-gray-50 text-black px-2.5 py-1.5 font-medium hover:bg-[#c0caf5]">
-          functional programming
-        </a>
-      </div>
-      <div class="group relative hover:bg-gray-400/50 dark:hover:bg-[#565f89]/50 rounded-md px-4 py-4 dark:text-[#9aa5ce] w-full min-h-28">
-        <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-900/50 dark:text-[#bb9af7] dark:group-hover:text-[#a9b1d6]/50">
-          <a href="posts/functional-python.html">
-            <span class="absolute inset-0"></span>
-            Functional programming to improve your python code reliability
-          </a>
-        </h3>
-        <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-700 dark:text-[#9aa5ce]">How making your code more functional can improve its reliability</p>
-      </div>
-    </article>
-  </div>
+  <ol role="list" class="pt-10 divide-y divide-gray-500/50 w-full max-w-2xl">
+    <li class="py-5 px-4 mb-2 hover:bg-gray-400/50 dark:hover:bg-[#565f89]/50 rounded-b-md">
+      <a href="posts/functional-python.html" class="flex justify-between gap-x-4 sm:gap-x-6">
+        <div class="min-w-0 flex-auto dark:text-[#9aa5ce]">
+          <h2 class="text-base font-semibold leading-6 text-gray-900 dark:text-[#bb9af7]">Functional programming to improve your python code reliability</h2>
+          <p class="mt-1 text-xs leading-5 text-gray-700 dark:text-[#9aa5ce]">How making your code more functional can improve its reliability</p>
+        </div>
+        <div class="shrink-0 flex flex-col items-end">
+          <time datetime="Mar 22, 2026" class="mt-1 text-xs leading-5 text-gray-700 dark:text-[#9aa5ce] whitespace-nowrap">Mar 22, 2026</time>
+        </div>
+      </a>
+    </li>
+  </ol>
   </main>
   <footer class="flex justify-center pb-4 px-4 text-center">
     <span class="text-gray-700 dark:text-[#9aa5ce]">
