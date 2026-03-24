@@ -133,7 +133,7 @@ defmodule Blog.Components do
 
   def posts(assigns) do
     ~H"""
-    <div class="w-full mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+    <div class="w-full mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 min-w-0">
       <div class="text-center dark:text-[#9aa5ce]">
         <h2 class="text-2xl font-bold tracking-tight sm:text-4xl text-gray-900 dark:text-[#bb9af7]">{@title}</h2>
         <p class="mt-2 text-base sm:text-lg leading-8 text-gray-700 dark:text-[#9aa5ce]">{@desc}</p>
@@ -141,7 +141,7 @@ defmodule Blog.Components do
       <div class="mt-6 text-gray-900 dark:text-[#2ac3de]">
         <button type="button" onclick="history.back()" class="cursor-pointer">cd ..</button>
       </div>
-      <div class="post-content mt-4 text-justify leading-7 text-gray-700 dark:text-[#9aa5ce] overflow-x-auto">
+      <div class="post-content mt-4 text-justify leading-7 text-gray-700 dark:text-[#9aa5ce]">
         {@content}
       </div>
     </div>
